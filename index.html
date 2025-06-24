@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+ <meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Notícias Grande Vitória | Vitória, Vila Velha, Serra, Cariacica</title>
+<meta name="description" content="Últimas notícias (últimos 60 dias) de Vitória, Vila Velha, Serra e Cariacica – economia, política, segurança, cultura e mais." />
+
+<!-- SEO adicionais -->
+<meta name="keywords" content="notícias, Vitória, Vila Velha, Serra, Cariacica, economia, política, segurança, cultura, ES" />
+<meta name="author" content="Seu Nome ou Nome da Empresa" />
+<meta name="robots" content="index, follow" />
+<meta name="language" content="pt-BR" />
+
+<!-- Open Graph para Facebook, LinkedIn, WhatsApp -->
+<meta property="og:title" content="Notícias Grande Vitória | Vitória, Vila Velha, Serra, Cariacica" />
+<meta property="og:description" content="Últimas notícias (últimos 60 dias) de Vitória, Vila Velha, Serra e Cariacica – economia, política, segurança, cultura e mais." />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://seusite.com.br/" />
+<meta property="og:image" content="https://seusite.com.br/imagem-de-preview.jpg" />
+<meta property="og:locale" content="pt_BR" />
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Notícias Grande Vitória | Vitória, Vila Velha, Serra, Cariacica" />
+<meta name="twitter:description" content="Últimas notícias (últimos 60 dias) de Vitória, Vila Velha, Serra e Cariacica – economia, política, segurança, cultura e mais." />
+<meta name="twitter:image" content="https://seusite.com.br/imagem-de-preview.jpg" />
+<meta name="twitter:site" content="@SeuTwitter" />
+
+<!-- Favicon e ícones -->
+<link rel="icon" href="/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+<!-- Acessibilidade -->
+<meta name="color-scheme" content="dark light" />
+
+
+  <style>
+    /* Reset básico */
+/* === Estilos gerais do corpo da página === */
+body {
+  margin: 0;
+  padding: 0;
+  height: 100vh;
+  overflow-x: hidden;              /* Evita barra horizontal */
+  background: #1a0000;             /* Fundo escuro, tom lava */
+  font-family: Arial, sans-serif;
+  color: #fff;                    /* Texto branco */
+  position: relative;             /* Para posicionamento interno */
+}
+
+/* === Fundo animado de lava - camada 1 (gradientes radiais com blur) === */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 200%; height: 200%;
+  background:
+    radial-gradient(circle at 40% 40%, #ff4000, transparent 60%),
+    radial-gradient(circle at 60% 60%, #ff9500, transparent 50%),
+    radial-gradient(circle at 30% 70%, #ff2e00, transparent 50%),
+    radial-gradient(circle at 70% 30%, #ff7300, transparent 40%);
+  background-blend-mode: screen;  /* Mescla as cores */
+  animation: lava-move 8s linear infinite alternate; /* Movimento suave */
+  filter: blur(30px);             /* Desfocado para brilho */
+  opacity: 0.8;
+  z-index: -2;                   /* Atrás do conteúdo */
+}
+
+/* === Fundo animado de lava - camada 2 (gradiente linear animado) === */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0; left: 0;
+  width: 200%; height: 200%;
+  background: linear-gradient(45deg, #b03000 25%, #ff4500 50%, #b03000 75%);
+  background-size: 100% 200%;
+  animation: lava-texture 6s ease-in-out infinite alternate; /* Textura animada */
+  mix-blend-mode: overlay;       /* Mistura com camada inferior */
+  filter: contrast(150%) brightness(1.2);
+  opacity: 0.6;
+  z-index: -1;
+}
+
+/* === Animação do movimento da lava (camada 1) === */
+@keyframes lava-move {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(-25%, -25%) scale(1.1);
+  }
+}
+
+/* === Animação da textura da lava (camada 2) === */
+@keyframes lava-texture {
+  0% {
+    background-position: 0% 0%;
+  }
+  100% {
+    background-position: 0% 100%;
+  }
+}
+
+/* === Cabeçalho e rodapé com fundo semi-transparente e texto com sombra === */
+header,
+footer {
+  background: rgba(255, 69, 0, 0.85);
+  color: #fff;
+  padding: 1rem;
+  text-align: center;
+  text-shadow: 0 0 10px #ff3300;
+  font-weight: bold;
+  position: relative;
+  z-index: 10; /* Acima do fundo animado */
+}
+
+/* === Links de navegação simples, com hover sublinhado === */
+nav a {
+  color: #fff;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: 600;
+}
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* === Conteúdo principal com fundo escuro semitransparente e sombra laranja === */
+main {
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 1rem;
+  background: rgba(30, 0, 0, 0.75);
+  border-radius: 10px;
+  box-shadow: 0 0 20px #ff4500;
+  position: relative;
+  z-index: 5;
+  overflow-y: auto;
+  max-height: 75vh; /* Limita altura para scroll */
+}
+
+/* === Estilo dos títulos com borda inferior e sombra laranja === */
+h2 {
+  border-bottom: 2px solid #ff4500;
+  padding-bottom: 0.5rem;
+  color: #ff7f50;
+  text-shadow: 0 0 6px #ff4500;
+  margin-top: 2rem;
+}
+
+/* === Estilos para tabelas, bordas e cores para combinar com lava === */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+  color: #fff;
+}
+th,
+td {
+  border: 1px solid #ff4500;
+  padding: 0.5rem 0.75rem;
+  text-align: left;
+  vertical-align: top;
+}
+th {
+  background: #ff4500;
+  color: #1a0000;
+  font-weight: bold;
+  text-shadow: none;
+}
+
+/* === Estilo para datas e cidades na tabela para destaque === */
+.date {
+  color: #ffddb3;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+.cidade {
+  font-weight: bold;
+  color: #ff9b00;
+  white-space: nowrap;
+}
+
+/* === Links das notícias com cor laranja suave e efeito hover === */
+a.noticia,
+td a {
+  color: #ffa94d;
+  text-decoration: none;
+}
+a.noticia:hover,
+td a:hover {
+  text-shadow: 0 0 10px #ff6f00;
+}
+
+/* === Gotas de lava caindo (estilo e animação via JS ou similar) === */
+.lava-drop {
+  position: fixed;
+  top: -20px;
+  width: 8px;
+  height: 20px;
+  background: radial-gradient(circle at 50% 50%, #ff6a00, #b03000);
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  filter: drop-shadow(0 0 5px #ff6a00);
+  animation-timing-function: ease-in;
+  pointer-events: none;
+  z-index: 15;
+  opacity: 0.8;
+}
+
+/* === Botão/Link para loja com efeito de bola de fogo/lava pulsante === */
+a[href="loja.html"] {
+  color: white;
+  font-size: large;
+  position: fixed;
+  bottom: 200px;
+  left: 60%;
+  background-color: #d62300;
+  border-radius: 8px;
+  border: none;
+  padding: 50px 66px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  transition: background-color 0.3s ease;
+  width: 10%;
+  text-align: center;
+  font-weight: bold;
+  z-index: 10;
+
+  /* Animação de fogo/lava pulsante */
+  animation: lava-fire 3s infinite alternate;
+  box-shadow:
+    0 0 10px 2px #ff4500,
+    0 0 20px 6px #ff6347,
+    0 0 30px 8px #ff4500,
+    0 0 40px 14px #ff8c00;
+}
+
+/* === Keyframes para o efeito pulsante do botão de lava === */
+@keyframes lava-fire {
+  0% {
+    box-shadow:
+      0 0 5px 1px #ff4500,
+      0 0 10px 3px #ff6347,
+      0 0 15px 5px #ff4500,
+      0 0 20px 8px #ff8c00;
+    background-color: #d62300;
+  }
+  50% {
+    box-shadow:
+      0 0 15px 4px #ff6347,
+      0 0 25px 10px #ff4500,
+      0 0 35px 14px #ff6347,
+      0 0 45px 20px #ff8c00;
+    background-color: #ff2a00;
+  }
+  100% {
+    box-shadow:
+      0 0 10px 2px #ff4500,
+      0 0 20px 6px #ff6347,
+      0 0 30px 8px #ff4500,
+      0 0 40px 14px #ff8c00;
+    background-color: #d62300;
+  }
+}
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Notícias – Grande Vitória (últimos 60 dias)</h1>
+    <nav>
+      <a href="#vitoria">Vitória</a> |
+      <a href="#vilavelha">Vila Velha</a> |
+      <a href="#serra">Serra</a> |
+      <a href="#cariacica">Cariacica</a>
+    </nav>
+  </header>
+  <main>
+    <section id="vitoria">
+      <h2>Vitória</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Cidade</th>
+            <th>Notícia</th>
+            <th>Fonte</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>05/06/2025</td>
+            <td class="cidade">Vitória</td>
+            <td><a href="https://eshoje.com.br" target="_blank" class="noticia">Vitória volta a registrar homicídio após 70 dias sem casos</a></td>
+            <td><a href="https://eshoje.com.br" target="_blank">ES Hoje</a></td>
+          </tr>
+          <tr>
+            <td>23/05/2025</td>
+            <td class="cidade">Vitória</td>
+            <td><a href="https://es360.com.br" target="_blank" class="noticia">Bikes compartilhadas são gratuitas em dias úteis</a></td>
+            <td><a href="https://es360.com.br" target="_blank">ES360</a></td>
+          </tr>
+          <table>
+		  <thead>
+			<tr>
+			  <th>Data</th>
+			  <th>Cidade</th>
+			  <th>Notícia</th>
+			  <th>Fonte</th>
+			</tr>
+		  </thead>
+		  <tbody>
+			<tr>
+			  <td>25/05/2025</td>
+			  <td class="cidade">Vitória</td>
+			  <td><a href="https://es360.com.br" target="_blank" class="noticia">Terceira Ponte será parcialmente interditada para evento</a></td>
+			  <td><a href="https://es360.com.br" target="_blank">ES360</a></td>
+			</tr>
+			<tr>
+			  <td>24/05/2025</td>
+			  <td class="cidade">Vitória</td>
+			  <td><a href="https://eshoje.com.br" target="_blank" class="noticia">Prefeitura lança programa de reciclagem</a></td>
+			  <td><a href="https://eshoje.com.br" target="_blank">ES Hoje</a></td>
+			</tr>
+			<tr>
+			  <td>23/05/2025</td>
+			  <td class="cidade">Vitória</td>
+			  <td><a href="https://es360.com.br" target="_blank" class="noticia">Festival de música movimenta o centro</a></td>
+			  <td><a href="https://es360.com.br" target="_blank">ES360</a></td>
+			</tr>
+			<tr>
+			  <td>22/05/2025</td>
+			  <td class="cidade">Vitória</td>
+			  <td><a href="https://es360.com.br" target="_blank" class="noticia">Novo parque público é inaugurado</a></td>
+			  <td><a href="https://es360.com.br" target="_blank">ES360</a></td>
+			</tr>
+			<tr>
+			  <td>21/05/2025</td>
+			  <td class="cidade">Vitória</td>
+			  <td><a href="https://eshoje.com.br" target="_blank" class="noticia">Obras de saneamento avançam na cidade</a></td>
+			  <td><a href="https://eshoje.com.br" target="_blank">ES Hoje</a></td>
+			</tr>
+			<!-- … mais notícias … -->
+
+          <tr>
+            <td>25/05/2025</td>
+            <td class="cidade">Vitória</td>
+            <td><a href="https://es360.com.br" target="_blank" class="noticia">Terceira Ponte será parcialmente interditada para evento</a></td>
+            <td><a href="https://es360.com.br" target="_blank">ES360</a></td>
+          </tr>
+          <tr>
+            <td>28/05/2025</td>
+            <td class="cidade">Vitória</td>
+            <td><a href="https://es360.com.br" target="_blank" class="noticia">Restrição a shows em Vitória gera debate na Câmara</a></td>
+            <td><a href="https://es360.com.br" target="_blank">ES360</a></td>
+          </tr>
+          <tr>
+            <td>04/05/2025</td>
+            <td class="cidade">Vitória</td>
+            <td><a href="https://es360.com.br" target="_blank" class="noticia">Frio bate recorde e chuva é prevista para o fim de semana</a></td>
+            <td><a href="https://es360.com.br" target="_blank">ES360</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="vilavelha">
+      <h2>Vila Velha</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Cidade</th>
+            <th>Notícia</th>
+            <th>Fonte</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>06/06/2025</td>
+            <td class="cidade">Vila Velha</td>
+            <td><a href="https://eshoje.com.br" target="_blank" class="noticia">Assalto a caixa eletrônico em Vila Velha</a></td>
+            <td><a href="https://eshoje.com.br" target="_blank">ES Hoje</a></td>
+          </tr>
+          <tr>
+            <td>02/05/2025</td>
+            <td class="cidade">Vila Velha</td>
+            <td><a href="https://es360.com.br" target="_blank" class="noticia">Festas juninas na região serão canceladas</a></td>
+            <td><a href="https://es360.com.br" target="_blank">ES360</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="serra">
+      <h2>Serra</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Cidade</th>
+            <th>Notícia</th>
+            <th>Fonte</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>20/05/2025</td>
+            <td class="cidade">Serra</td>
+            <td><a href="https://eshoje.com.br" target="_blank" class="noticia">Atropelamento na Serra deixa uma vítima fatal</a></td>
+            <td><a href="https://eshoje.com.br" target="_blank">ES Hoje</a></td>
+          </tr>
+          <tr>
+            <td>18/05/2025</td>
+            <td class="cidade">Serra</td>
+            <td><a href="https://es360.com.br" target="_blank" class="noticia">Reforma do centro da Serra está quase pronta</a></td>
+            <td><a href="https://es360.com.br" target="_blank">ES360</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section id="cariacica">
+      <h2>Cariacica</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Data</th>
+            <th>Cidade</th>
+            <th>Notícia</th>
+            <th>Fonte</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>22/06/2025</td>
+            <td class="cidade">Cariacica</td>
+            <td><a href="https://es360.com.br" target="_blank" class="noticia">Aumento da violência preocupa moradores de Cariacica</a></td>
+            <td><a href="https://es360.com.br" target="_blank">ES360</a></td>
+          </tr>
+          <tr>
+            <td>15/06/2025</td>
+            <td class="cidade">Cariacica</td>
+            <td><a href="https://eshoje.com.br" target="_blank" class="noticia">Nova praça é inaugurada no bairro Campo Grande</a></td>
+            <td><a href="https://eshoje.com.br" target="_blank">ES Hoje</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+<div id="ads">
+  <a href="loja.html">
+    CONFERIR
+  </a>
+</div>
+  <footer>
+    <p>  Notícias Grande Vitória</p>
+  </footer>
+
+  <script>
+    // Gotas de lava caindo
+    const maxDrops = 20;
+    const drops = [];
+
+    function createDrop() {
+      const drop = document.createElement('div');
+      drop.classList.add('lava-drop');
+      drop.style.left = Math.random() * window.innerWidth + 'px';
+      drop.style.animationName = 'dropFall';
+      drop.style.animationDuration = 2 + Math.random() * 2 + 's';
+      drop.style.animationDelay = '0s';
+      document.body.appendChild(drop);
+      drops.push(drop);
+
+      drop.addEventListener('animationend', () => {
+        drop.style.left = Math.random() * window.innerWidth + 'px';
+        drop.style.animationDuration = 2 + Math.random() * 2 + 's';
+        drop.style.animationDelay = '0s';
+        drop.style.top = '-20px';
+        drop.style.opacity = 0.8;
+        drop.style.animationPlayState = 'running';
+        drop.style.animationName = 'none';
+        void drop.offsetWidth; // Trigger reflow
+        drop.style.animationName = 'dropFall';
+      });
+    }
+
+    for (let i = 0; i < maxDrops; i++) {
+      createDrop();
+    }
+
+  </script>
+  <style>
+    @keyframes dropFall {
+      0% {
+        top: -20px;
+        opacity: 0.8;
+        transform: translateY(0) scale(1);
+      }
+      100% {
+        top: 100vh;
+        opacity: 0;
+        transform: translateY(100vh) scale(0.8);
+      }
+    }
+  </style>
+</body>
+</html>
