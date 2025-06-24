@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Redirecionando...</title>
+  <style>
+    /* Fundo lava animado */
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+      overflow-x: hidden;
+      background: #1a0000; /* Fundo escuro */
+      font-family: Arial, sans-serif;
+      color: #fff;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background:
+        radial-gradient(circle at 40% 40%, #ff4000, transparent 60%),
+        radial-gradient(circle at 60% 60%, #ff9500, transparent 50%),
+        radial-gradient(circle at 30% 70%, #ff2e00, transparent 50%),
+        radial-gradient(circle at 70% 30%, #ff7300, transparent 40%);
+      background-blend-mode: screen;
+      animation: lava-move 8s linear infinite alternate;
+      filter: blur(30px);
+      opacity: 0.8;
+      z-index: -2;
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 200%;
+      height: 200%;
+      background:
+        linear-gradient(45deg, #b03000 25%, #ff4500 50%, #b03000 75%);
+      background-size: 100% 200%;
+      animation: lava-texture 6s ease-in-out infinite alternate;
+      mix-blend-mode: overlay;
+      filter: contrast(150%) brightness(1.2);
+      opacity: 0.6;
+      z-index: -1;
+    }
+    @keyframes lava-move {
+      0% {
+        transform: translate(0, 0) scale(1);
+      }
+      100% {
+        transform: translate(-25%, -25%) scale(1.1);
+      }
+    }
+    @keyframes lava-texture {
+      0% {
+        background-position: 0% 0%;
+      }
+      100% {
+        background-position: 0% 100%;
+      }
+    }
+
+    /* Texto principal */
+    h1 {
+      font-size: 3rem;
+      color: #ff7f50;
+      text-shadow:
+        0 0 10px #ff4500,
+        0 0 20px #ff6347,
+        0 0 30px #ff4500,
+        0 0 40px #ff8c00;
+      margin-bottom: 1rem;
+      animation: lava-fire-text 3s infinite alternate;
+    }
+    p {
+      font-size: 1.2rem;
+      color: #ffa94d;
+      text-shadow: 0 0 10px #ff6f00;
+    }
+    a {
+      color: #ff6347;
+      font-weight: bold;
+      text-decoration: none;
+      text-shadow: 0 0 10px #ff4500;
+      transition: color 0.3s ease;
+    }
+    a:hover {
+      color: #ff8c00;
+      text-shadow: 0 0 20px #ff8c00;
+    }
+
+    /* Animação no texto */
+    @keyframes lava-fire-text {
+      0% {
+        text-shadow:
+          0 0 10px #ff4500,
+          0 0 20px #ff6347,
+          0 0 30px #ff4500,
+          0 0 40px #ff8c00;
+        color: #ff7f50;
+      }
+      50% {
+        text-shadow:
+          0 0 20px #ff6347,
+          0 0 30px #ff4500,
+          0 0 40px #ff6347,
+          0 0 50px #ff8c00;
+        color: #ff944d;
+      }
+      100% {
+        text-shadow:
+          0 0 10px #ff4500,
+          0 0 20px #ff6347,
+          0 0 30px #ff4500,
+          0 0 40px #ff8c00;
+        color: #ff7f50;
+      }
+    }
+  </style>
+  <script>
+   // altere para o link desejado
+    const urls=[
+      "https://espiritosantolinhadotempovideo.vercel.app/",
+      "https://congeladotimeline.vercel.app/",
+      "https://drogasillinhadotempo.vercel.app/",
+      "https://piadasrepositorio.vercel.app/",
+      "https://vodkavilavelhavitoria.vercel.app/",
+      "https://soulslike.vercel.app/",
+      "https://www.geocredibnk.com.br/",
+      "https://riodejaneironoticiadia.vercel.app/",
+      "https://jogosantigos472302513.wordpress.com/maquinas-vps-temos-todas-as-opcoes-de-maqinas-para-voce/"
+    ];
+    function mudar(arr){
+      return Math.floor(Math.random()* arr.length);
+    }
+    const links=mudar(urls);
+    const escolhido=urls[links];
+
+    // Redireciona em 3 segundos
+    setTimeout(() => {
+      window.location.href = escolhido;
+    }, 3000);
+  </script>
+</head>
+<body>
+  <h1>Você está sendo redirecionado...</h1>
+  <p>Se não for redirecionado automaticamente, <a href="https://example.com">clique aqui</a>.</p>
+</body>
+</html>
